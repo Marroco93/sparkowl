@@ -12,6 +12,7 @@
     
     
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/animations.css">
     
     
     
@@ -30,7 +31,7 @@
     
 </head>
 
-<body>
+<body class="bod">
 	
 <div class="spacer pin">
     <h1 class="id ">Hi.</h1>
@@ -45,10 +46,20 @@
     
     
     <img src="images/Asset1.svg" alt="iPhone" class="imgs" id="imgphone">
+
     <img src="images/sparkowl.svg" alt="iPhone" class="imgs" id="imgphone1">
     
+    <div class="mouse1">
+      <div class="mouse">
+    <div class="wheel"></div>
+  </div>
+  <div>
+    <span class="arrow"></span>
+  </div>
+    </div>
     
-</div>
+    </div>
+
 
     
     
@@ -67,6 +78,12 @@
 $(document).ready(function(){
     
     
+    function disableScrolling(){
+    var x=window.scrollX;
+    var y=window.scrollY;
+    window.onscroll=function(){window.scrollTo(x, y);};
+}
+    
     var tl = gsap.timeline({repeat: 0, repeatDelay: 1});
     var tl1 = gsap.timeline({repeat: 0, repeatDelay: 1});
 tl1.to(".id", {x: 50, duration: 1});
@@ -81,6 +98,17 @@ tl1.to("#well", {opacity: 0, duration: 1.5});
     tl1.to("#imgphone", {y: "-25em", duration: 0.5},"<0");
     tl1.to("#imgphone1", {y: "-25em", duration: 0.5},"<0");
     tl1.to("#imgphone1", {opacity: 1, duration: 0.4},"<0.5");
+    tl1.to("#imgphone1", {opacity: 1, duration: 0.4},"<0.5");
+    tl1.to(".mouse1", {   opacity:1, duration: 0.4},"<0");
+    tl1.to(".bod", {   overflow: "auto", duration: 0.4},"<0.5");
+    
+//    tl.to("#imgphone1", {opacity: 0, duration: 0.4},"first");
+//    tl.to("#imgphone1", {x: 50, duration: 0.4},"first");
+    tl.to("#spark", {opacity: 0, duration: 0.4},"first");
+    tl.to("#imgphone", {x: "-25vw", duration: 0.4},"first");
+    tl.to("#imgphone1", {x: "-25vw", duration: 0.4},"first");
+    tl.to(".pin", {backgroundColor:"#ffffff", duration: 0.4},"first");
+//    tl.to("#spark", {y: "-20vw", duration: 0.4},"first");
     
         
 
@@ -90,7 +118,7 @@ var controller = new ScrollMagic.Controller();
   var scene = new ScrollMagic.Scene({
     triggerElement: this,
     triggerHook: 0.4,
-    duration: "100%"
+    duration: "200%"
   })
   .setPin('.pin')
     .setTween(tl)

@@ -1,11 +1,14 @@
+
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   padding: 0;
   margin: 0;
+    overflow: hidden;
 }
 
 .spacer {
+
   background-color: #cd58eb;
   height: 100vh;
   display: flex;
@@ -14,6 +17,7 @@ body {
   justify-content: center;
   color: white;
   font-size: 2em;
+
 }
 
 
@@ -88,7 +92,15 @@ width: 10em;
 #imgphone1{
         
 width: 7em;
-    right: 21vw;
+    right: 20.5vw;
     bottom: -15em;
     opacity: 0;
+}
+
+.mouse1{
+        position: absolute;
+    left: 50%;
+        bottom: 5%;
+    opacity: 0;
+
 }
